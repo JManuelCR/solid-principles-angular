@@ -1,0 +1,6 @@
+<input type="text" placeholder="Nombre de usuario" #username />
+<button (click)="registerUser(username.value)">Registrar Usuario</button>
+<hr>
+<hr>
+<ul>
+  <li *ngFor="let user of users; trackBy: trackByIndex">{{ user }}</li>
