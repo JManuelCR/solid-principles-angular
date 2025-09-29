@@ -2,6 +2,7 @@ import { Component, Inject, inject } from '@angular/core';
 import { UserService } from '../../../core/users/user.service';
 import { Notifier } from '../../../domain/models/notifier.interface';
 import { NgFor } from '@angular/common';
+import { NOTIFIER_TOKEN } from '../../../core/notifications/notifier.token';
 
 @Component({
   selector: 'app-user',
@@ -14,8 +15,9 @@ import { NgFor } from '@angular/common';
 })
 export class UserComponent {
   private userService = inject(UserService);
+  private notifier = inject<Notifier>(NOTIFIER_TOKEN);
   public users: string[] = [];
-  constructor(@Inject('Notifier') private notifier: Notifier) {}
+  constructor() {}
 
   registerUser(userName: string): void {
     this.userService.addUser(userName);
