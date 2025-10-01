@@ -14,6 +14,7 @@ import { NOTIFIER_TOKEN } from '../../../core/notifications/notifier.token';
   styleUrl: './user.component.css',
 })
 export class UserComponent {
+  // Using property injection and Angular's inject function. Dependency Inversion Principle DIP of SOLID principles
   private userService = inject(UserService);
   private notifier = inject<Notifier>(NOTIFIER_TOKEN);
   public users: string[] = [];

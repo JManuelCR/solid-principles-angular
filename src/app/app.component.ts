@@ -5,7 +5,8 @@ import { UserComponent } from './shared/components/user/user.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,
+  imports: [
+    RouterOutlet,
     UserComponent
   ],
   templateUrl: './app.component.html',
